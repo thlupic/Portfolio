@@ -1,0 +1,76 @@
+﻿@model Project_2.Models.MapReduceVm
+
+@using (Html.BeginForm("MapReduce", "Home", FormMethod.Post))
+{
+<input type="hidden" name="JSfunction" />
+<div>
+    <textarea></textarea>
+</div>
+<div>
+    <div style="display:inline-block"><button name="buttonID" value="1">Prva funkcija</button></div>
+    <div style="display:inline-block"><button name="buttonID" value="2">Druga funkcija</button></div>
+@*    <div style="display:inline-block"><button name="buttonID" value="3">Test</button></div>*@
+    @if (Model.newsListTest.Count > 0)
+    {
+        var objectX = Model.newsListTest[10];
+        System.Web.Script.Serialization.JavaScriptSerializer oSerializer = new System.Web.Script.Serialization.JavaScriptSerializer();
+        string sJSON = oSerializer.Serialize(objectX);
+    <div style="display:inline-block"><button name="buttonID" value="4" onclick="cl(@sJSON)">Test2</button></div>
+    }
+</div>
+    
+    if (Model.listArticlesComments.Count > 0)
+    {
+        <table>
+            <tr><td>ID</td><td>Naslov</td><td>Broj komentara</td></tr>
+        @foreach (var item in Model.listArticlesComments)
+        {
+            <tr>
+                <td>@item.key</td>
+                <td>@item.articleName</td>
+                <td>@item.commentNumber</td>
+            </tr>
+        }
+        </table>
+    }
+
+    if (Model.listAuthorWord.Count > 0)
+    {
+        foreach (var item in Model.listAuthorWord)
+        {
+         <div>
+             <div>Autor: <b>@item.authorName</b></div>
+
+             <div>Najčešće korištene riječi:</div>
+
+             @foreach (var word in item.mostUsedWords)
+             {
+                 <div style="display:inline-block;"> @word.word</div>
+                 <div style="display:inline-block;">( @word.count ) </div> <br />
+             }
+         </div>
+        }
+        
+    }
+
+}
+
+<script>
+
+    function cl(obj) {
+        var count = [];
+        var clX = commentsLength(obj);
+        count.push(obj.newsID);
+        count.push(clX);
+        count.push(obj.headline);
+        alert(count);
+        return count;
+    };
+    function commentsLength(obj) {
+        var result = 0;
+        for (var prop in obj.comments)
+        { if (obj.comments.hasOwnProperty(prop)) { result++; } }        
+        return result;
+    }
+
+</script>

@@ -1,0 +1,15 @@
+D:\NMBP projects\Project 2\DAL\bin\Debug\DAL.dll.config
+D:\NMBP projects\Project 2\DAL\bin\Debug\DAL.dll
+D:\NMBP projects\Project 2\DAL\bin\Debug\DAL.pdb
+D:\NMBP projects\Project 2\DAL\bin\Debug\Core.dll
+D:\NMBP projects\Project 2\DAL\bin\Debug\CorrugatedIron.dll
+D:\NMBP projects\Project 2\DAL\bin\Debug\Newtonsoft.Json.dll
+D:\NMBP projects\Project 2\DAL\bin\Debug\protobuf-net.dll
+D:\NMBP projects\Project 2\DAL\bin\Debug\Core.pdb
+D:\NMBP projects\Project 2\DAL\bin\Debug\CorrugatedIron.xml
+D:\NMBP projects\Project 2\DAL\bin\Debug\Newtonsoft.Json.xml
+D:\NMBP projects\Project 2\DAL\bin\Debug\protobuf-net.pdb
+D:\NMBP projects\Project 2\DAL\bin\Debug\protobuf-net.xml
+D:\NMBP projects\Project 2\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+D:\NMBP projects\Project 2\DAL\obj\Debug\DAL.dll
+D:\NMBP projects\Project 2\DAL\obj\Debug\DAL.pdb

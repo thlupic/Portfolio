@@ -1,0 +1,84 @@
+﻿@model Project_2.Models.NewsFeedVm
+
+@{
+    ViewBag.Title = "NewsFeed";
+}
+
+<h2 style="text-align:center">NewsFeed</h2>
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post)) {
+
+<div class="wrapper">
+@foreach (var item in Model.newsList)
+{
+    <table>
+        <tr>
+            <td>
+                <b>@item.headline</b>
+            </td>
+            <td rowspan="3">
+                <img src="data:image/jpeg;base64,@item.image64" />
+            </td>
+        </tr>
+        <tr>
+            <td style="width:50em;">@item.text</td>
+        </tr>
+        <tr>
+            <td>Autor: @item.author</td>
+        </tr>
+
+        <tr><td><br /></td></tr>
+        
+        <tr>
+            <td>
+                @{if (item.comments.Count() > 0)
+                {
+                    <div>
+                        Komentari:
+                    </div>
+                }
+                }
+            </td>
+        </tr>
+    
+        <tr>
+            <td>
+                <div class="showComment" style="display:inline-block">
+                @{foreach (var comment in item.comments)
+                    {
+                        <div style="display:inline-block">
+                            @comment.timestamp
+                        </div>
+                        <div style="display:inline-block">
+                            @comment.text
+                        </div>
+                        <br />
+                    }    
+                }
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td id="@item.newsID">
+                @{var inputName = "commentText"+item.newsID.ToString();}
+            Dodaj komentar: <input name="@inputName" id="@inputName" />
+            <button name="newsID" value="@item.newsID" onclick="copyFunction(@item.newsID)">Unesi</button>
+            </td>    
+        </tr>
+    </table>
+    <br />
+}
+    </div>
+    <input type="hidden" name="commentText" id="comment"/>
+}
+
+<script type="text/javascript">
+    function copyFunction(newsID) {
+        var inputName = "commentText" + newsID;
+        var inputValue = document.getElementById(inputName).value;
+        document.getElementById("comment").value = inputValue;
+    }
+</script>
+

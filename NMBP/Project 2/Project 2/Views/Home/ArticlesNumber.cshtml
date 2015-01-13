@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "ArticlesNumber";
+}
+
+<h2 style="text-align:center">ArticlesNumber</h2>
+
+@using (Html.BeginForm("ArticlesNumber", "Home", FormMethod.Post))
+{
+    var n = Session["n"].ToString();
+    <div>
+        <div style="text-align:center"><input type="text" name="number" value="@n"/></div>
+        <div style="text-align:center">
+            <input type="submit" name="newN" value="OK" />
+        </div>
+    </div>
+}

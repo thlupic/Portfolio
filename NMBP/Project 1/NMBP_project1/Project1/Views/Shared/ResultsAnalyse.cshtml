@@ -1,0 +1,37 @@
+﻿@model Project1.Models.StatsModel
+
+@{var results = Model.analyseResults.results;
+  var columns = Model.analyseResults.columns;}
+
+<h2>Generirani SQL upit:</h2>
+<div class="item toHide">
+    <div id="hideToggle" class="inline">+</div>@Model.analyseResults.query    
+</div>
+
+<table style="border:2px solid black;">
+    <thead>
+        <tr>
+        @{foreach (var column in columns)
+          {
+              <th>@column</th>
+          }
+        }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in results)
+        {
+            <tr>
+            <td>
+                @result.query
+            </td>
+            @foreach (var count in result.values)
+            {
+                <td>
+                    @count
+                </td>
+            }
+            </tr>
+        }
+    </tbody>
+</table>

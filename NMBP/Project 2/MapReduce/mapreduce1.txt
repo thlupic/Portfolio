@@ -1,0 +1,28 @@
+{
+    "inputs": "articles",
+
+    "query": [{
+
+                "map": {
+
+                    "language": "javascript",
+
+                    "source": "function (obj) {var jsx=JSON.parse(obj.values[0].data);var value1=jsx.comments;var count=[];var result = 0;for (var prop in value1) { if (value1.hasOwnProperty(prop)) { result++; } };count.push({key:obj.key,count:result,headline:jsx.headline});return count;}"
+
+                    }
+
+            },{
+
+                "reduce":{
+
+                    "language":"javascript",
+
+                    "keep":true,
+
+                    "source":"function(obj){return obj.sort(function(a, b) { return JSON.parse(b.count) - JSON.parse(a.count) })}"
+
+                    }
+
+            }]
+
+}

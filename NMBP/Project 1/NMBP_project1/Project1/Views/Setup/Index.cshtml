@@ -1,0 +1,33 @@
+﻿@model Project1.Models.SetupModel
+
+@using (Html.BeginForm("Index","Setup",FormMethod.Post))
+{
+<h2>Setup parametara za pristup bazi</h2>
+<div>
+<div>Server: @Html.TextBoxFor(x => x.setupData.server)</div>
+<div>Port: @Html.TextBoxFor(x => x.setupData.port)</div>
+<div>Username: @Html.TextBoxFor(x => x.setupData.username)</div>
+<div>Password: @Html.TextBoxFor(x => x.setupData.password)</div>
+<div>DB: @Html.TextBoxFor(x => x.setupData.DB)</div>
+</div>
+<div>
+    <button name="sendQuery" id="btnSubmitSetup">Spremi podatke</button>
+</div>
+
+<h2>Unos novog filma</h2>
+
+<div>Naziv filma:
+@Html.TextBoxFor(x => x.movieName)
+</div>
+<div>
+    <button name="sendQuery" id="btnSubmitMovie">Unesi film</button>
+</div>
+    <div>
+    @{
+    if (Model!=null && Model.result!=null)
+    {
+     @Model.result  
+    }
+    }
+    </div>
+}

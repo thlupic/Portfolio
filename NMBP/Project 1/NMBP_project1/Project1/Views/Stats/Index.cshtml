@@ -1,0 +1,42 @@
+﻿<link href="../../Content/themes/base/jquery.ui.theme.css" rel="stylesheet" />
+<script src="../../Scripts/jquery-ui-1.8.20.min.js"></script>
+
+@model Project1.Models.StatsModel
+
+<h2>Analiza</h2>
+
+@using (Html.BeginForm("Index","Stats",FormMethod.Post))
+{
+<div class="item">Početni datum: @Html.TextBoxFor(x=>x.startDate, new { id = "startDate", @class = "jquery_datepicker", @Value = @Model.startDate.ToString("dd.MM.yyyy.")})</div>
+<div class="item">Krajnji datum: @Html.TextBoxFor(x=>x.endDate, new { id = "endDate", @class = "jquery_datepicker", @Value = @Model.endDate.ToString("dd.MM.yyyy.")})</div>
+
+<div class="item">
+    Odaberi granulaciju:
+    <div>
+        @{
+        @Html.RadioButtonFor(x=>x.isByHour, true, new { Checked = "checked" }) @:Po satu
+        @Html.RadioButtonFor(x=>x.isByHour, false) @:Po danu
+        }
+    </div>
+</div>
+
+<div class="item">
+    <button name="sendQuery" id="btnSubmitQuery">Pošalji upit</button>
+</div>
+}
+
+@Html.Partial("ResultsAnalyse", Model)
+
+<script>
+    $(document).ready(function () {
+        $("#startDate").datepicker({
+            dateFormat: 'dd.mm.yyyy.'
+        });
+    });
+
+    $(document).ready(function () {
+        $("#endDate").datepicker({
+            dateFormat: 'dd.mm.yyyy.'
+        });
+    });
+</script>

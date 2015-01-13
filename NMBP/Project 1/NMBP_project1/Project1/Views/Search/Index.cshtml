@@ -1,0 +1,42 @@
+﻿@model Project1.Models.SearchResultModel
+<h1 style="text-align:center">Pretraživanje</h1>
+@*upiti*@
+@using (Html.BeginForm("Index","Search",FormMethod.Post))
+{
+    <div class="item">
+    Filter: @Html.TextBoxFor(x => x.SearchValue)
+    </div>
+
+<div class="item">
+    Odaberi operator spajanja:
+    <div>
+        @{
+        @Html.RadioButtonFor(x=>x.QueryAndValue, true, new { Checked = "checked" }) @:AND
+        @Html.RadioButtonFor(x=>x.QueryAndValue, false) @:OR
+        }
+    </div>
+</div>
+    
+<div class="item">
+    Odaberi tip pretrage:
+        <div>
+        @{
+        @Html.RadioButtonFor(x=>x.SearchType, "exact", new { Checked = "checked" }) @:Exact string matching
+        @Html.RadioButtonFor(x=>x.SearchType, "dictionary") @:Dictionary search
+        @Html.RadioButtonFor(x=>x.SearchType, "fuzzy") @:Fuzzy string search
+        }
+    </div>
+</div>
+
+<div class="item">
+    <button name="sendQuery" id="btnSubmitQuery">Pošalji upit</button>
+</div>
+}
+
+<h2>Generirani SQL upit:</h2>
+<div class="item toHide">
+    <div id="hideToggle" class="inline">+</div>@Model.SQLQuery    
+</div>
+
+@Html.Partial("ResultsQuery", Model)
+

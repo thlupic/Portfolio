@@ -1,0 +1,5 @@
+D:\NMBP projects\Project 2\Core\bin\Debug\Core.dll
+D:\NMBP projects\Project 2\Core\bin\Debug\Core.pdb
+D:\NMBP projects\Project 2\Core\obj\Debug\Core.csprojResolveAssemblyReference.cache
+D:\NMBP projects\Project 2\Core\obj\Debug\Core.dll
+D:\NMBP projects\Project 2\Core\obj\Debug\Core.pdb

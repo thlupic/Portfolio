@@ -1,0 +1,69 @@
+{
+    "inputs": "articles",
+
+    "query": [{
+
+                "map": {
+
+                    "language": "javascript",
+
+                    "source": "function (obj) {var jsx=JSON.parse(obj.values[0].data);var value1=jsx.author;var value2=jsx.text;var value=[];value.push({author:value1,text:value2});return value;}"
+
+                    }
+
+            },{
+
+                "reduce":{
+
+                    "language":"javascript",
+
+                    "keep":true,
+
+                    "source":"function(values) {var result=[];var authors=[];for (var entry in values){var key=values[entry].text;var author=values[entry].author;if (authors.indexOf(author)==-1) authors.push(author);}for (var unique in authors){var authorName = authors[unique];var keys=[];for (var entry1 in values){var author = values[entry1].author;var key=values[entry1].text;if (author==authorName) keys.push(key);}var text=new String(); for(var item in keys){var text1=keys[item];text+=text1;};result.push({author:authorName,texts:text});}return result;}"
+                    }
+
+            },{
+"reduce":{
+
+                    "language":"javascript",
+
+                    "keep":true,
+
+                    "source":"function(values) {  var resultG = [];
+for (var value in values) {var texts = values[value].texts;
+var words=texts.toLowerCase().split(/[,. ]/);
+
+var counts=[];
+for(var word1 in words)
+{
+if (words[word1] != '') {
+      var count = {};
+      count[words[word1]] = 1;
+      counts.push(count);
+}
+}
+var author = values[value].author;
+var result = {};
+for(var value in counts) {
+for(var word in counts[value])
+{
+      if (word in result)
+        result[word] += counts[value][word];
+      else
+        result[word] = counts[value][word];
+    }
+}
+var resultArray = [];
+for(var item in result)
+{
+resultArray.push({word:item,count:result[item]});
+}
+resultArray.sort(function(a, b) {return JSON.parse(b.count) - JSON.parse(a.count)});
+var finalArray=resultArray.slice(0,10);
+resultG.push({author:author,words:finalArray});}
+  return resultG;}"
+                    }
+
+}]
+
+}

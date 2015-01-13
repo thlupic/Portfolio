@@ -1,0 +1,14 @@
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\Core.dll
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\DAL.dll
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\Core.pdb
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\DAL.pdb
+D:\NMBP projects\Project 2\ClassLibrary1\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\CorrugatedIron.dll
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\Newtonsoft.Json.dll
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\CorrugatedIron.xml
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\Newtonsoft.Json.xml
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\BLL.dll.config
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\BLL.dll
+D:\NMBP projects\Project 2\ClassLibrary1\bin\Debug\BLL.pdb
+D:\NMBP projects\Project 2\ClassLibrary1\obj\Debug\BLL.dll
+D:\NMBP projects\Project 2\ClassLibrary1\obj\Debug\BLL.pdb
