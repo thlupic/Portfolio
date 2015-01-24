@@ -1,0 +1,10 @@
+D:\RecommendSocial\RecommendSocial\WebService\bin\Release\WebService.dll
+D:\RecommendSocial\RecommendSocial\WebService\bin\Release\WebService.pdb
+D:\RecommendSocial\RecommendSocial\WebService\bin\Release\HtmlAgilityPack.dll
+D:\RecommendSocial\RecommendSocial\WebService\bin\Release\HtmlAgilityPack.pdb
+D:\RecommendSocial\RecommendSocial\WebService\bin\Release\HtmlAgilityPack.xml
+D:\RecommendSocial\RecommendSocial\WebService\obj\Release\WebService.csprojResolveAssemblyReference.cache
+D:\RecommendSocial\RecommendSocial\WebService\obj\Release\WebService.dll
+D:\RecommendSocial\RecommendSocial\WebService\obj\Release\WebService.pdb
+D:\RecommendSocial\RecommendSocial\WebService\bin\Release\Newtonsoft.Json.dll
+D:\RecommendSocial\RecommendSocial\WebService\bin\Release\Newtonsoft.Json.xml
