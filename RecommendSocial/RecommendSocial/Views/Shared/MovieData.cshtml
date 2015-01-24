@@ -1,0 +1,37 @@
+﻿@model RecommendSocial.Models.MovieVm
+
+<div class="table-responsive">
+<table class="table" id="moviesTable">
+@{var i=1;}
+    <thead>
+        <tr>
+        <th>
+            #
+        </th>
+        <th>
+            Title
+        </th>
+        <th>
+            IMDB Score
+        </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.movies)
+{
+    <tr>
+        <td>
+            @i
+        </td>
+        <td>
+            @item.title (@item.year)
+        </td>
+        <td>
+            @item.imdbScore
+        </td>
+    </tr>
+    i += 1;
+}
+        </tbody>
+</table>
+</div>

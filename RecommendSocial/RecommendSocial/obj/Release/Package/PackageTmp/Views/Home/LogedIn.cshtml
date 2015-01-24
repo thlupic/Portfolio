@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "LogedIn";
+}
+@model RecommendSocial.Models.MovieVm
+<h2>LogedIn</h2>
+@using (Html.BeginForm("LogedIn","Home",FormMethod.Post))
+{
+    <div>
+    <button name="MoviesFetch" value="fetch" disabled>Napuni filmove</button>
+    </div>
+    
+    @*<div>
+    <button name="MoviesFetch" value="fetch2">Napuni testne filmove</button>
+    </div>*@
+    
+    <div>
+    <button name="MoviesFetch" value="get">Dohvati filmove</button>
+    </div>    
+
+    <div>
+    Dohvaćeno: @Model.numberOfMovies
+    </div>
+    
+    <div>
+    @Html.Partial("MovieData")
+    </div>
+}

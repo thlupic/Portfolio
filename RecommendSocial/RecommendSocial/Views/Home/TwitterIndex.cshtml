@@ -1,0 +1,40 @@
+﻿@model RecommendSocial.Models.TwitterVm
+
+@using (Html.BeginForm("TwitterIndex", "Home", FormMethod.Post))
+{
+    if (Model==null)
+      {
+        <div>
+            Unesite PIN za Twitter: @Html.TextBoxFor(x => x.captcha)
+        </div>
+    
+        <div>
+            <input type="image" src="https://g.twimg.com/dev/sites/default/files/images_documentation/sign-in-with-twitter-gray.png" />
+            @*<a href="~/Views/Home/TwitterIndex"><img src="https://g.twimg.com/dev/sites/default/files/images_documentation/sign-in-with-twitter-gray.png" /></a>*@
+        </div>
+      }
+      else
+      {
+        @*
+        <div style="text-align:right;">
+            Name: @Model.name<br />
+            Description: @Model.description<br />
+            Profile image: <img src="@Model.profileImageLink" />
+        </div>*@
+    
+        @Html.Partial("TwitterData")
+    
+        <div>
+            Unesite ime filma: @Html.TextBoxFor(x => x.searchName)
+        </div>
+        Model.isAuth=true;
+        @Html.HiddenFor(x => x.isAuth)
+        @Html.HiddenFor(x => x.name)
+        @Html.HiddenFor(x => x.description)
+        @Html.HiddenFor(x => x.profileImageLink)
+        @Html.HiddenFor(x => x.twitterID);
+        <div>
+            <button type="submit">Pretraži</button>
+        </div>
+      }
+}

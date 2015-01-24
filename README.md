@@ -7,3 +7,7 @@ Projekt 1 - Pretraga teksta u POSTGRE bazi - Exact / Fuzzy / Dictionary
 
 Projekt 2 - Web portal s RIAK bazom + MapReduce
 (Tehnologije - ASP.NET MVC / C#, JavaScript, RIAK)
+
+RecommendSocial - Recommender for movies based on Facebook movie likes
+Includes functions for communicating with web services and HTML scrapper function
+(Technologies - ASP.NET MVC / C#, JavaScript, MongoDB)
